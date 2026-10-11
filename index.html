@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fc">
+  <meta name="description" content="Academic homepage of Your Name, a researcher in generative watermarking and embodied intelligence.">
+  <title>Your Name | Academic Homepage</title>
+  <style>
+    :root {
+      --ink: #202336;
+      --muted: #697087;
+      --line: #e7e9f1;
+      --paper: #fff;
+      --wash: #f7f8fc;
+      --purple: #6853c8;
+      --purple-dark: #4e3baa;
+      --purple-pale: #f0edff;
+      --teal: #188b86;
+      --shadow: 0 16px 45px rgba(32, 35, 54, .07);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--wash);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: var(--purple-dark); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .shell { width: min(1050px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar { padding: 23px 0; }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { color: var(--ink); font-weight: 750; letter-spacing: -.035em; font-size: 1.03rem; }
+    .navlinks { display: flex; gap: 23px; flex-wrap: wrap; }
+    .navlinks a { color: var(--muted); font-size: .9rem; font-weight: 550; }
+    .hero {
+      position: relative; overflow: hidden; margin: 24px 0 28px; padding: clamp(30px, 6vw, 66px);
+      background: var(--paper); border: 1px solid var(--line); border-radius: 27px; box-shadow: var(--shadow);
+      display: grid; grid-template-columns: 1fr 230px; gap: 42px; align-items: center;
+    }
+    .hero:after { content: ""; position: absolute; width: 280px; height: 280px; border-radius: 50%; background: #f2efff; right: -125px; top: -160px; }
+    .eyebrow { display: inline-flex; gap: 9px; align-items: center; color: var(--purple-dark); background: var(--purple-pale); border-radius: 999px; padding: 6px 12px; font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); }
+    h1 { margin: 18px 0 8px; font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.08; letter-spacing: -.065em; }
+    .role { margin: 0 0 18px; color: var(--muted); font-size: 1.12rem; }
+    .intro { max-width: 650px; color: #50566d; font-size: 1.02rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 25px; }
+    .button { display: inline-flex; align-items: center; gap: 8px; padding: 10px 15px; border-radius: 11px; font-size: .9rem; font-weight: 700; border: 1px solid var(--line); background: white; color: var(--ink); }
+    .button.primary { color: white; background: var(--purple); border-color: var(--purple); }
+    .button:hover { text-decoration: none; transform: translateY(-1px); }
+    .portrait {
+      width: 205px; aspect-ratio: 1; justify-self: center; border-radius: 27px;
+      background: linear-gradient(145deg, #eeeaff, #e1f2f0); display: grid; place-items: center;
+      color: var(--purple); font-size: 3.6rem; font-weight: 800; letter-spacing: -.08em; border: 1px solid #e7e4f8;
+      position: relative; z-index: 1;
+    }
+    main { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(250px, .8fr); gap: 22px; align-items: start; padding-bottom: 54px; }
+    .column { display: grid; gap: 22px; }
+    section.card { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 25px 27px; box-shadow: 0 8px 25px rgba(32, 35, 54, .035); }
+    h2 { margin: 0 0 16px; font-size: 1.15rem; letter-spacing: -.025em; display: flex; align-items: center; gap: 10px; }
+    .heading-mark { width: 8px; height: 22px; background: var(--purple); border-radius: 8px; }
+    p { margin: 0 0 12px; color: #50566d; }
+    p:last-child { margin-bottom: 0; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 17px; }
+    .chip { color: #51459a; background: #f3f1ff; padding: 6px 10px; border-radius: 8px; font-size: .78rem; font-weight: 650; }
+    .project { padding: 14px 0; border-top: 1px solid var(--line); }
+    .project:first-of-type { border-top: 0; padding-top: 0; }
+    .project h3 { margin: 0 0 4px; font-size: .98rem; }
+    .project p { font-size: .9rem; }
+    .project-tag { color: var(--teal); font-size: .75rem; font-weight: 700; }
+    .publication { padding: 13px 0; border-top: 1px solid var(--line); }
+    .publication:first-of-type { border-top: 0; padding-top: 0; }
+    .publication strong { display: block; line-height: 1.45; }
+    .publication span { color: var(--muted); font-size: .86rem; }
+    .placeholder { color: #8a8fa2 !important; font-style: italic; }
+    .contact-list { display: grid; gap: 11px; }
+    .contact-item { display: flex; align-items: center; gap: 11px; color: #53596f; font-size: .9rem; }
+    .icon { width: 31px; height: 31px; border-radius: 9px; display: grid; place-items: center; color: var(--purple); background: var(--purple-pale); font-size: .86rem; font-weight: 800; }
+    .news { list-style: none; padding: 0; margin: 0; }
+    .news li { display: grid; grid-template-columns: 62px 1fr; gap: 9px; padding: 9px 0; border-top: 1px solid var(--line); color: #565c70; font-size: .88rem; }
+    .news li:first-child { border-top: 0; padding-top: 0; }
+    .date { color: var(--purple-dark); font-weight: 700; }
+    footer { padding: 20px 0 32px; text-align: center; color: #85899a; font-size: .82rem; }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; gap: 25px; }
+      .portrait { width: 132px; grid-row: 1; justify-self: start; border-radius: 20px; font-size: 2.5rem; }
+      .hero-copy { grid-row: 2; }
+      main { grid-template-columns: 1fr; }
+      .nav { align-items: flex-start; flex-direction: column; gap: 12px; }
+      .navlinks { gap: 15px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar shell">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#top">Your Name</a>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="shell" id="top">
+    <section class="hero" aria-labelledby="name">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="dot"></span> Academic homepage</span>
+        <h1 id="name">Your Name</h1>
+        <p class="role">Researcher in Generative AI &amp; Embodied Intelligence</p>
+        <p class="intro">I study how generative models can be made more trustworthy, and how vision-language models can better understand progress and value in embodied tasks. I enjoy building practical benchmarks and evaluation tools alongside the research.</p>
+        <div class="actions">
+          <a class="button primary" href="#publications">Selected work <span aria-hidden="true">↗</span></a>
+          <a class="button" href="mailto:your.email@example.com">Email me</a>
+          <a class="button" href="https://github.com/">GitHub</a>
+        </div>
+      </div>
+      <div class="portrait" aria-label="Photo placeholder">YN</div>
+    </section>
+
+    <main>
+      <div class="column">
+        <section class="card" id="about">
+          <h2><span class="heading-mark"></span>About</h2>
+          <p>I am a <span class="placeholder">[PhD student / researcher]</span> at <span class="placeholder">[University or institution]</span>. My work sits at the intersection of computer vision, generative models, and robotics.</p>
+          <p>My current interests include reliable image provenance, watermarking for diffusion models, and evaluating value-aware models in long-horizon manipulation.</p>
+        </section>
+
+        <section class="card" id="research">
+          <h2><span class="heading-mark"></span>Research interests</h2>
+          <p>I focus on methods that connect model behavior to measurable, useful outcomes.</p>
+          <div class="chips">
+            <span class="chip">Generative image watermarking</span>
+            <span class="chip">Diffusion models</span>
+            <span class="chip">Embodied AI</span>
+            <span class="chip">Value model evaluation</span>
+            <span class="chip">Robotics benchmarks</span>
+          </div>
+        </section>
+
+        <section class="card" id="projects">
+          <h2><span class="heading-mark"></span>Selected projects</h2>
+          <article class="project">
+            <span class="project-tag">BENCHMARK · EMBODIED AI</span>
+            <h3>RoboValue / Suboptimal-Value-Bench</h3>
+            <p>A benchmark direction for evaluating whether value models can recognize progress, suboptimal behavior, and task stages in robot manipulation.</p>
+          </article>
+          <article class="project">
+            <span class="project-tag">SURVEY · GENERATIVE AI</span>
+            <h3>Blind Watermarking for Diffusion Models</h3>
+            <p>A structured study of watermarking methods across the data, latent, denoising network, decoder, and hybrid stages of image generation.</p>
+          </article>
+          <article class="project">
+            <span class="project-tag">ADD A PROJECT</span>
+            <h3 class="placeholder">[Project title]</h3>
+            <p class="placeholder">[One or two sentences describing your contribution and linking to the code or project page.]</p>
+          </article>
+        </section>
+
+        <section class="card" id="publications">
+          <h2><span class="heading-mark"></span>Selected publications</h2>
+          <div class="publication">
+            <strong class="placeholder">[Paper title]</strong>
+            <span>[Your Name], Coauthors · [Venue, Year]</span><br>
+            <span><a href="#">Paper</a> · <a href="#">Code</a> · <a href="#">BibTeX</a></span>
+          </div>
+          <div class="publication">
+            <strong class="placeholder">[Add a publication when ready]</strong>
+            <span>Use this section for published papers, preprints, or works in progress.</span>
+          </div>
+        </section>
+      </div>
+
+      <aside class="column">
+        <section class="card" id="contact">
+          <h2><span class="heading-mark"></span>Contact &amp; links</h2>
+          <div class="contact-list">
+            <div class="contact-item"><span class="icon">@</span><a href="mailto:your.email@example.com">your.email@example.com</a></div>
+            <div class="contact-item"><span class="icon">GH</span><a href="https://github.com/">GitHub profile</a></div>
+            <div class="contact-item"><span class="icon">OR</span><a href="https://openreview.net/">OpenReview profile</a></div>
+            <div class="contact-item"><span class="icon">CV</span><a href="#">Curriculum Vitae (PDF)</a></div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2><span class="heading-mark"></span>News</h2>
+          <ul class="news">
+            <li><span class="date">2026</span><span class="placeholder">[Add a paper, talk, award, or project update.]</span></li>
+            <li><span class="date">2025</span><span class="placeholder">[Add an earlier update if useful.]</span></li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2><span class="heading-mark"></span>Current focus</h2>
+          <p>Building clear evaluation protocols and trustworthy tools for models that generate images or reason about real-world task progress.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer>© 2026 Your Name · Built with HTML and CSS</footer>
+  </div>
+</body>
+</html>
